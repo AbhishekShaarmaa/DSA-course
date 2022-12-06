@@ -15,6 +15,9 @@ bool name(int arr[], int size)
     {
         return 
     }
+    else{
+        cout<<"no. not found ";
+    }
 }
 int main()
 {
