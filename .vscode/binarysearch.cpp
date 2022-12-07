@@ -24,7 +24,7 @@ while (start <= end )
       end = mid-1;
     }
    
-   int mid  = (start+end)/2;
+    mid  = (start+end)/2;
     return -1;
 
 }
