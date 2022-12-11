@@ -1,43 +1,47 @@
 #include<iostream>
 using namespace std;
-int binarysearch(int arr[],int size,int key )
+bool binarysearch(int arr[],int size,int key )
 {
    int start = 0 ;
-   int end = size;
+   int end = size-1;
    int mid  = (start+end)/2;
-   cout<<"mid element "<<mid<<endl;
+   
+   
 //    while loop
 while (start <= end )
 {
-    if (mid==key)
+    if (arr[mid]==key)
     {
-        return key;
-        cout<<"location of key"<<key<<endl;
+      
+       cout<< mid << endl;
+         return mid ;
     }    
     
-    if (mid<key)
+    if (arr[mid]<key) 
     {
         start = mid +1;
+        
     }
     else
     {
+         
       end = mid-1;
+     
     }
    
     mid  = (start+end)/2;
-    return -1;
 
 }
 
-  
+  return -1;
 }
 
 int main()
 {
     int n=8;
     int arr[8]={1,2,5,6,6,6,8,9};
-    int key = 5;
-    binarysearch(arr , n , key );
-    cout<<binarysearch<<endl;
+    int keyelement  = 5;
+   bool ans = binarysearch(arr , 8 , 5 );
+    cout<< ans  << endl;
     return 0;
 }

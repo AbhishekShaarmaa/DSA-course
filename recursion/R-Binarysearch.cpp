@@ -12,7 +12,7 @@ int binarysearch(int arr[], int s, int k , int e)
     {
         return true;
     }
-    
+    if 
  }
 
 
