@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
-void printarray()
-{
-}
+
 bool palindrome(string str, int i, int j)
 {
 
@@ -24,7 +22,7 @@ bool palindrome(string str, int i, int j)
 int main()
 {
   //    declaring string
-  string name = "madama";
+  string name = "hello";
   bool ans = palindrome(name, 0, name.length() - 1);
   cout << ans;
 

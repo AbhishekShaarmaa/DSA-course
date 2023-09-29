@@ -1,49 +1,47 @@
-#include<iostream>
+
+#include <iostream>
 using namespace std;
 
-int bsearch(int arr[] , int key , int size )
-{
-    int start = 0 ;
-    int end  = size - 1 ;
-    int mid = (start + end) / 2 ;
-    cout << "mid value" << mid <<endl;
-    
-    while(start <= end)
-    {  
-        cout<< "arr[mid]"<< arr[mid] << endl;
-        if(key == arr[mid] )
-        {
-            return mid ;  
+int binarySearch(int arr[], int key, int size) {
+    int start = 0;
+    int end = size - 1;
+    int first = -1 ;
+    int last = 0 ;
+     cout<<"last = "<<last << endl;
+
+    while (start <= end) {
+        int mid = start + (end - start) / 2; // Calculate mid without potential overflow
+        cout << "mid value: " << mid << endl;
+      
+
+        if (key == arr[mid]) {
+            first = mid ;
+            last = mid ;
+            return mid;
         }
 
-        // agr mid ke equal nii hai to
-        if(key > arr[mid])
-        {
+        if (key > arr[mid]) {
+            last = mid +1;
+             cout<<"last_1 = "<<last << endl;
             start = mid + 1;
-        }
-        else 
-        {
-            end = mid-1;
+        } else {
+            first = mid -1;
+            end = mid - 1;
         }
        
-       mid = (start + end) / 2;
-    };
+    }
+     cout<<"first = "<<first << endl;
+     cout<<"last = "<<last << endl;
 
-   return -1;
-};
+    return -1;
+}
 
-int main()
-{
-  
-  int arr1[5] = {1,2,3,4,5};
-  int arr2[4] = {1,2,3,4};
+int main() {
+    int arr1[5] = {1, 2, 3, 4, 5};
+    int key = 3;
 
-  int key ;
-   
-   int odd = bsearch(arr1 , 3 , 5) ;
-   cout << "odd binary serch " << odd << endl; 
- 
-
+    int index = binarySearch(arr1, key, 5);
+    cout << "Binary search result: " << index << endl;
 
     return 0;
 }
